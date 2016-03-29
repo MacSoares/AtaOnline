@@ -10,7 +10,7 @@ class AtaController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
-    @Secured('ROLE_USER')
+    @Secured(["ROLE_ADMIN", "ROLE_USER"])
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         respond Ata.list(params), model:[ataCount: Ata.count()]
@@ -20,13 +20,13 @@ class AtaController {
         respond ata
     }
 
-    @Secured('ADMIN_USER')
+    @Secured(["ROLE_ADMIN", "ROLE_USER"])
     def create() {
         respond new Ata(params)
     }
 
     @Transactional
-    @Secured('ADMIN_USER')
+    @Secured(["ROLE_ADMIN", "ROLE_USER"])
     def save(Ata ata) {
         if (ata == null) {
             transactionStatus.setRollbackOnly()
