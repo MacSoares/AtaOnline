@@ -21,12 +21,6 @@ class User implements Serializable {
 	boolean accountLocked
 	boolean passwordExpired
 
-	static belongsTo = Ata
-    static hasMany = [atas: Ata]
-    static constraints = {
-        atas nullable:true
-    }
-
 	User(String username, String password, String matricula, String email, String nome) {
 		this()
 		this.username = username
@@ -56,9 +50,14 @@ class User implements Serializable {
 
 	static transients = ['springSecurityService']
 
+
+	static belongsTo = Ata
+    static hasMany = [atas: Ata]
+
 	static constraints = {
 		password blank: false, password: true
 		username blank: false, unique: true
+		atas nullable:true
 	}
 
 	static mapping = {
