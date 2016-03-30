@@ -16,7 +16,7 @@ class AtaController {
     def index(Integer max) {
         def user = getAuthenticatedUser()
         if (user.admin) {
-            render "Cachaça carai!!"
+            render view:"menu_professores"
             params.max = Math.min(max ?: 10, 100)
             respond Ata.list(params), model:[ataCount: Ata.count()]
             System.out.println(user.admin)
