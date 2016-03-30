@@ -10,10 +10,21 @@ class AtaController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
+    def springSecurityService
+
     @Secured(["ROLE_ADMIN", "ROLE_USER"])
     def index(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
-        respond Ata.list(params), model:[ataCount: Ata.count()]
+        def user = springSecurityService.getCurrentUser()
+        if (user.admin) {
+            render "Cachaça carai!!"
+            params.max = Math.min(max ?: 10, 100)
+            respond Ata.list(params), model:[ataCount: Ata.count()]
+            System.out.println(user.admin)
+        }else{
+            render "ola, iai"
+            System.out.println(user.admin)
+        }
+
     }
 
     def show(Ata ata) {
@@ -51,11 +62,13 @@ class AtaController {
         }
     }
 
+    @Secured("ROLE_USER")
     def edit(Ata ata) {
         respond ata
     }
 
     @Transactional
+    @Secured("ROLE_USER")
     def update(Ata ata) {
         if (ata == null) {
             transactionStatus.setRollbackOnly()
@@ -81,6 +94,7 @@ class AtaController {
     }
 
     @Transactional
+    @Secured("ROLE_USER")
     def delete(Ata ata) {
 
         if (ata == null) {

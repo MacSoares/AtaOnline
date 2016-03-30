@@ -27,4 +27,4 @@ grails.plugin.springsecurity.filterChain.chainMap = [
 ]
 
 grails.plugin.springsecurity.successHandler.successHandler.alwaysUseDefault = true
-grails.plugin.springsecurity.successHandler.defaultTargetUrl = "/user/create"
+grails.plugin.springsecurity.successHandler.defaultTargetUrl = "/ata/index"

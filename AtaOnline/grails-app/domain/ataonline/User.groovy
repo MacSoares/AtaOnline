@@ -2,6 +2,7 @@ package ataonline
 
 import groovy.transform.EqualsAndHashCode
 import groovy.transform.ToString
+import ataonline.UserRole
 
 @EqualsAndHashCode(includes='username')
 @ToString(includes='username', includeNames=true, includePackage=false)
@@ -17,6 +18,7 @@ class User implements Serializable {
     String email
     String nome
 	boolean enabled = true
+	boolean admin
 	boolean accountExpired
 	boolean accountLocked
 	boolean passwordExpired
