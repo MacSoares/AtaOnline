@@ -14,14 +14,14 @@ class AtaController {
 
     @Secured(["ROLE_ADMIN", "ROLE_USER"])
     def index(Integer max) {
-        def user = springSecurityService.getCurrentUser()
+        def user = getAuthenticatedUser()
         if (user.admin) {
             render "Cachaça carai!!"
             params.max = Math.min(max ?: 10, 100)
             respond Ata.list(params), model:[ataCount: Ata.count()]
             System.out.println(user.admin)
-        }else{
-            render "ola, iai"
+        }else if(!user.admin){
+            render "ola, cigana catita"
             System.out.println(user.admin)
         }
 
