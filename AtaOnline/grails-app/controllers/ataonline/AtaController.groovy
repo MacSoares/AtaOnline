@@ -21,8 +21,7 @@ class AtaController {
             respond Ata.list(params), model:[ataCount: Ata.count()]
             System.out.println(user.admin)
         }else if(!user.admin){
-            render "ola, cigana catita"
-            System.out.println(user.admin)
+            render view:"menu"
         }
 
     }
