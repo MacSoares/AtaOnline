@@ -19,7 +19,13 @@
                 <div class="message" role="status">${flash.message}</div>
             </g:if>
 
-            <f:table collection="${ataList}" />
+            <ul>
+            <g:each in="${atas}" var="atas">
+                <li>${atas.notas} gustavo</li>
+                </g:each>
+            </ul>
+
+            <f:table collection="${atas}" />
 
             <div class="pagination">
                 <g:paginate total="${ataCount ?: 0}" />
