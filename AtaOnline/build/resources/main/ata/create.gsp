@@ -1,8 +1,9 @@
 <!DOCTYPE html>
+<%@ page import = "ataonline.AtaController"%>
 <html>
     <head>
         <meta name="layout" content="main" />
-        <g:set var="entityName" value="${message(code: 'ata.label', default: 'Ata')}" />
+        <g:set var="entityName" value="${message(code: 'ata.label', default: 'Atas')}" />
         <title><g:message code="default.create.label" args="[entityName]" /></title>
     </head>
     <body>
@@ -26,13 +27,21 @@
             </ul>
             </g:hasErrors>
             <g:form action="save">
+         
+
                 <fieldset class="form">
                     <f:all bean="ata"/>
+                    <f:field bean="ata" property="nota"/>
+                    <f:field bean="ata" property="conteudo"/>
+                    <f:field bean="ata" property="arquivo"/>
+                    
+
                 </fieldset>
                 <fieldset class="buttons">
                     <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
                 </fieldset>
             </g:form>
         </div>
+
     </body>
 </html>

@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@ page import = "ataonline.AtaController"%>
 <html>
     <head>
         <meta name="layout" content="main" />
@@ -26,16 +27,13 @@
             </ul>
             </g:hasErrors>
             <g:form action="save">
-          
-                <fieldset class="form">
+         
 
-                <g:if test="${1!=1}">
+                <fieldset class="form">
+                    <f:all bean="ata"/>
                     <f:field bean="ata" property="nota"/>
-                </g:if>
-                <g:else>
                     <f:field bean="ata" property="conteudo"/>
                     <f:field bean="ata" property="arquivo"/>
-                </g:else>
                     
 
                 </fieldset>

@@ -29,7 +29,13 @@
             <g:form resource="${this.ata}" method="PUT">
                 <g:hiddenField name="version" value="${this.ata?.version}" />
                 <fieldset class="form">
-                    <f:all bean="ata"/>
+
+
+                nota: <label>${this.ata?.nota}</label>
+                <f:field bean="ata" property="conteudo"/>
+                <f:field bean="ata" property="arquivo"/>
+
+
                 </fieldset>
                 <fieldset class="buttons">
                     <input class="save" type="submit" value="${message(code: 'default.button.update.label', default: 'Update')}" />

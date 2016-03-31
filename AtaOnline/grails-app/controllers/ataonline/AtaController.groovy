@@ -11,8 +11,15 @@ class AtaController {
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     @Secured(["ROLE_ADMIN", "ROLE_USER"])
+    def index1(){
+        def user = getAuthenticatedUser()
+        def atas = user.atas
+        render atas   
+    }
+
+     @Secured(["ROLE_ADMIN", "ROLE_USER"])
     def index(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
+       params.max = Math.min(max ?: 10, 100)
         respond Ata.list(params), model:[ataCount: Ata.count()]
     }
 
