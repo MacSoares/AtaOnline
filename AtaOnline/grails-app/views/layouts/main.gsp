@@ -23,9 +23,9 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/#">
+                <a class="navbar-brand" href="/ata/index">
                     <i class="fa grails-icon">
-                        <asset:image src="grails-cupsonly-logo-white.svg"/>
+                        <asset:image src="ata_logo.png"/>
                     </i> Ata Online
                 </a>
             </div>
