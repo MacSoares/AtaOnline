@@ -9,7 +9,9 @@
     <div class="nav" role="navigation">
         <ul>
            <li><a href="#" class="btn btn-success">Experimentos</a></li>
-           <li><a href="#" class="btn btn-success">Notas</a></li>
+           <li><a href="/avaliacao/index" class="btn btn-success">Notas</a></li>
+           <li><a href="/user/create" class="btn btn-success">Cadastrar Aluno</a></li>
+           <li><a href="/user/index" class="btn btn-success">Lista de alunos</a></li>
         </ul>
     </div>
     <content tag="nav">
