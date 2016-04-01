@@ -10,7 +10,7 @@
     <div class="nav" role="navigation">
      <ul>
       <g:each var="notas" in ="${atas}" >
-        <li>${atas.notas} </li>
+        <li>${atas.nota} </li>
       </g:each>
     </ul>
             <ul>

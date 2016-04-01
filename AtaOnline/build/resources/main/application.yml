@@ -12,7 +12,7 @@ dataSource:
     url: jdbc:mysql://localhost:3306/ataonline
     driverClassName: com.mysql.jdbc.Driver
     username: root
-    password: eusoueu0
+    password: root
 
 environments:
     development:
