@@ -5,6 +5,9 @@
 
 # web application files
 /web-app/WEB-INF/classes
+*.class
+*.bin
+*.lock
 
 # default HSQL database files for production mode
 /prodDb.*
@@ -17,6 +20,7 @@
 /stacktrace.log
 /test/reports
 /logs
+*.log
 
 # project release file
 /*.war
