@@ -15,13 +15,14 @@ class AtaController {
     @Secured(["ROLE_ADMIN", "ROLE_USER"])
     def index(Integer max) {
         def user = getAuthenticatedUser()
+        
         if (user.admin) {
             render view:"menu_professores"
             params.max = Math.min(max ?: 10, 100)
             respond Ata.list(params), model:[ataCount: Ata.count()]
-            System.out.println(user.admin)
         }else if(!user.admin){
-            render view:"menu"
+            def atas = user.atas
+            render(view:"menu",model:[atas:atas])
         }
 
     }

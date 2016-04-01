@@ -6,7 +6,13 @@
         <title><g:message code="default.list.label" args="[entityName]" /></title>
     </head>
     <body>
+   
     <div class="nav" role="navigation">
+     <ul>
+      <g:each var="notas" in ="${atas}" >
+        <li>${atas.notas} </li>
+      </g:each>
+    </ul>
             <ul>
                <li><a href="#" class="btn btn-success">Nova ata</a></li>
                <li><a href="#" class="btn btn-success">Experimentos</a></li>
