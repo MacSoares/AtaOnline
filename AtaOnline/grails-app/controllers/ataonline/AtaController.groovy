@@ -17,7 +17,7 @@ class AtaController {
         def user = getAuthenticatedUser()
 
         if (user.admin) {
-            render (view:"menu_professores", model:[ataCount: Ata.count())
+            render(view:"menu_professores",model:[ataCount: Ata.getAll()])
         }else if(!user.admin){
             def atas = user.atas
             render(view:"menu",model:[atas:atas])

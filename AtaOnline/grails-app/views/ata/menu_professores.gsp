@@ -15,6 +15,6 @@
     <content tag="nav">
         <a href="/logoff"><button class="btn btn-default">Logout</button></a>
     </content>
-    <f:table collection="${ataList}" />
+    <f:table collection="${ataCount}" />
     </body>
 </html>
